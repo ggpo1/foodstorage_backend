@@ -10,6 +10,6 @@ namespace FoodStorage_Backend.Models.DataBase
         public int RoomID { get; set; }
         public string RoomName { get; set; }
         public int ApartmentID { get; set; }
-        public Apartment Apartment { get; set; }
+        public virtual Apartment Apartment { get; set; }
     }
 }

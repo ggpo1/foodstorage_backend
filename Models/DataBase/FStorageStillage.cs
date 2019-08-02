@@ -10,7 +10,7 @@ namespace FoodStorage_Backend.Models.DataBase
         public int FStorageStillageID { get; set; }
         public int FStorageStillageTypeID { get; set; }
         public int FStorageID { get; set; }
-        public FStorage FStorage { get; set; }
-        public FStorageStillageType FStorageStillageType { get; set; }
+        public virtual FStorage FStorage { get; set; }
+        public virtual FStorageStillageType FStorageStillageType { get; set; }
     }
 }

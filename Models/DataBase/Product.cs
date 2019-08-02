@@ -10,6 +10,6 @@ namespace FoodStorage_Backend.Models.DataBase
         public int ProductID { get; set; }
         public string ProductName { get; set; }
         public int ProductTypeID { get; set; }
-        public ProductType ProductType { get; set; }
+        public virtual ProductType ProductType { get; set; }
     }
 }

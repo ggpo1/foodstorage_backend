@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FoodStorage_Backend.Services.ApartmentSevice;
 using FoodStorage_Backend.Services.TestService;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -26,7 +27,12 @@ namespace FoodStorage_Backend
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<ITestService, TestService>(); // Сервис тестов
+
+            // Services Registrations
+            services.AddScoped<ITestService, TestService>(); // tests service
+            services.AddScoped<IApartmentService, ApartmentService>(); // apartments service
+
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 

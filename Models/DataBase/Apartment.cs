@@ -11,6 +11,6 @@ namespace FoodStorage_Backend.Models.DataBase
         public string ApartmentName { get; set; }
         public string ApartmentAddress { get; set; }
         public int UserID { get; set; }
-        public User User { get; set; }
+        public virtual User User { get; set; }
     }
 }

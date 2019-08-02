@@ -10,6 +10,6 @@ namespace FoodStorage_Backend.Models.DataBase
         public int FStorageID { get; set; }
         public string FStorageName { get; set; }
         public int RoomID { get; set; }
-        public Room Room { get; set; }
+        public virtual Room Room { get; set; }
     }
 }

@@ -9,15 +9,15 @@ namespace FoodStorage_Backend.Models
 {
     public class AppContext : DbContext
     {
-        public DbSet<User> Users { get; set; }
-        public DbSet<Apartment> Apartments { get; set; }
-        public DbSet<Room> Rooms { get; set; }
-        public DbSet<FStorage> FStorages { get; set; }
-        public DbSet<FStorageStillage> FStorageStillages { get; set; }
-        public DbSet<FStorageStillageType> FStorageStillageTypes { get; set; } 
-        public DbSet<FStorageStillageProduct> StorageStillageProducts { get; set; }
-        public DbSet<Product> Products { get; set; }
-        public DbSet<ProductType> ProductTypes { get; set; }
+        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Apartment> Apartments { get; set; }
+        public virtual DbSet<Room> Rooms { get; set; }
+        public virtual DbSet<FStorage> FStorages { get; set; }
+        public virtual DbSet<FStorageStillage> FStorageStillages { get; set; }
+        public virtual DbSet<FStorageStillageType> FStorageStillageTypes { get; set; } 
+        public virtual DbSet<FStorageStillageProduct> StorageStillageProducts { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<ProductType> ProductTypes { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
