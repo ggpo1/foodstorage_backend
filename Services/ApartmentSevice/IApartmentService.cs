@@ -10,5 +10,7 @@ namespace FoodStorage_Backend.Services.ApartmentSevice
     {
         // Get apartments list
         Task<List<Apartment>> GetApartments();
+        Task<Apartment> GetApartmentByID(int apartmentID);
+        Task<List<Apartment>> GetUserApartments(int userID);
     }
 }

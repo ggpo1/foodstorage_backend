@@ -24,5 +24,19 @@ namespace FoodStorage_Backend.Controllers
         {
             return await service.GetApartments();
         }
+
+        [HttpGet]
+        [Route("getapartmentsbyid")]
+        public async Task<Apartment> GetApartmentByID(int apartmentID)
+        {
+            return await service.GetApartmentByID(apartmentID);
+        }
+
+        [HttpGet]
+        [Route("getuserapartments")]
+        public async Task<List<Apartment>> GetUserApartments(int userID)
+        {
+            return await service.GetUserApartments(userID);
+        }
     }
 }

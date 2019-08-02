@@ -13,5 +13,14 @@ namespace FoodStorage_Backend.Services.ApartmentSevice
         {
             return Task.Run(() => MyDb.db.Apartments.ToList());
         }
+        public Task<Apartment> GetApartmentByID(int apartmentID)
+        {
+            return Task.Run(() => MyDb.db.Apartments.FirstOrDefault(elem => elem.ApartmentID == apartmentID));
+        }
+
+        public Task<List<Apartment>> GetUserApartments(int userID)
+        {
+            return Task.Run(() => MyDb.db.Apartments.Where(elem => elem.UserID == userID).ToList());
+        }
     }
 }
