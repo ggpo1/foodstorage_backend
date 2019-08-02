@@ -3,14 +3,16 @@ using FoodStorage_Backend.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FoodStorage_Backend.Migrations
 {
     [DbContext(typeof(AppContext))]
-    partial class AppContextModelSnapshot : ModelSnapshot
+    [Migration("20190802133814_Models_DBSETS")]
+    partial class Models_DBSETS
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -32,8 +34,6 @@ namespace FoodStorage_Backend.Migrations
 
                     b.HasKey("ApartmentID");
 
-                    b.HasIndex("UserID");
-
                     b.ToTable("Apartments");
                 });
 
@@ -49,8 +49,6 @@ namespace FoodStorage_Backend.Migrations
 
                     b.HasKey("FStorageID");
 
-                    b.HasIndex("RoomID");
-
                     b.ToTable("FStorages");
                 });
 
@@ -65,10 +63,6 @@ namespace FoodStorage_Backend.Migrations
                     b.Property<int>("FStorageStillageTypeID");
 
                     b.HasKey("FStorageStillageID");
-
-                    b.HasIndex("FStorageID");
-
-                    b.HasIndex("FStorageStillageTypeID");
 
                     b.ToTable("FStorageStillages");
                 });
@@ -86,10 +80,6 @@ namespace FoodStorage_Backend.Migrations
                     b.Property<int>("ProductID");
 
                     b.HasKey("FStorageStillageProductID");
-
-                    b.HasIndex("FStorageStillageID");
-
-                    b.HasIndex("ProductID");
 
                     b.ToTable("StorageStillageProducts");
                 });
@@ -119,8 +109,6 @@ namespace FoodStorage_Backend.Migrations
 
                     b.HasKey("ProductID");
 
-                    b.HasIndex("ProductTypeID");
-
                     b.ToTable("Products");
                 });
 
@@ -149,8 +137,6 @@ namespace FoodStorage_Backend.Migrations
 
                     b.HasKey("RoomID");
 
-                    b.HasIndex("ApartmentID");
-
                     b.ToTable("Rooms");
                 });
 
@@ -167,64 +153,6 @@ namespace FoodStorage_Backend.Migrations
                     b.HasKey("UserID");
 
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("FoodStorage_Backend.Models.DataBase.Apartment", b =>
-                {
-                    b.HasOne("FoodStorage_Backend.Models.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserID")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("FoodStorage_Backend.Models.DataBase.FStorage", b =>
-                {
-                    b.HasOne("FoodStorage_Backend.Models.DataBase.Room", "Room")
-                        .WithMany()
-                        .HasForeignKey("RoomID")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("FoodStorage_Backend.Models.DataBase.FStorageStillage", b =>
-                {
-                    b.HasOne("FoodStorage_Backend.Models.DataBase.FStorage", "FStorage")
-                        .WithMany()
-                        .HasForeignKey("FStorageID")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("FoodStorage_Backend.Models.DataBase.FStorageStillageType", "FStorageStillageType")
-                        .WithMany()
-                        .HasForeignKey("FStorageStillageTypeID")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("FoodStorage_Backend.Models.DataBase.FStorageStillageProduct", b =>
-                {
-                    b.HasOne("FoodStorage_Backend.Models.DataBase.FStorageStillage", "FStorageStillage")
-                        .WithMany()
-                        .HasForeignKey("FStorageStillageID")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("FoodStorage_Backend.Models.DataBase.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductID")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("FoodStorage_Backend.Models.DataBase.Product", b =>
-                {
-                    b.HasOne("FoodStorage_Backend.Models.DataBase.ProductType", "ProductType")
-                        .WithMany()
-                        .HasForeignKey("ProductTypeID")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("FoodStorage_Backend.Models.DataBase.Room", b =>
-                {
-                    b.HasOne("FoodStorage_Backend.Models.DataBase.Apartment", "Apartment")
-                        .WithMany()
-                        .HasForeignKey("ApartmentID")
-                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }
