@@ -8,9 +8,15 @@ namespace FoodStorage_Backend.Services.ApartmentSevice
 {
     public interface IApartmentService
     {
-        // Get apartments list
+        // Get info methods
         Task<List<Apartment>> GetApartments();
         Task<Apartment> GetApartmentByID(int apartmentID);
         Task<List<Apartment>> GetUserApartments(int userID);
+
+        // Add method
+        Task<Apartment> AddApartment(Apartment apartment);
+
+        // Update method
+        Task<Apartment> UpdateApartment(Apartment apartment);
     }
 }

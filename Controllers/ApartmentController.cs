@@ -19,6 +19,7 @@ namespace FoodStorage_Backend.Controllers
             this.service = service;
         }
 
+        #region Get data methods
         [HttpGet]
         public async Task<List<Apartment>> GetApartments()
         {
@@ -38,5 +39,18 @@ namespace FoodStorage_Backend.Controllers
         {
             return await service.GetUserApartments(userID);
         }
+        #endregion
+        #region Post data methods
+        [HttpPost]
+        public async Task<Apartment> AppApartment([FromBody]Apartment apartment)
+        {
+            return await service.AddApartment(apartment);
+        }
+        [HttpPatch]
+        public async Task<Apartment> UpdateApartment([FromBody]Apartment apartment)
+        {
+            return await service.UpdateApartment(apartment);
+        }
+        #endregion
     }
 }
