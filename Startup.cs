@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FoodStorage_Backend.Models;
+using FoodStorage_Backend.Models.DataBase;
 using FoodStorage_Backend.Services.ApartmentSevice;
 using FoodStorage_Backend.Services.TestService;
 using Microsoft.AspNetCore.Builder;
@@ -20,6 +22,18 @@ namespace FoodStorage_Backend
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
+            MyDb.db.Users.RemoveRange(MyDb.db.Users.ToArray());
+            MyDb.db.Apartments.RemoveRange(MyDb.db.Apartments.ToArray());
+            MyDb.db.SaveChanges();
+
+            User user1 = new User() { UserName = "user1", UserEmail = "user@email.com" };
+            MyDb.db.Users.Add(user1);
+            MyDb.db.SaveChanges();
+
+            Apartment apartment1 = new Apartment() { ApartmentName = "Дом", ApartmentAddress = "Москва", UserID = MyDb.db.Users.First(elem => elem.UserName == user1.UserName).UserID };
+            MyDb.db.Apartments.Add(apartment1);
+            MyDb.db.SaveChanges();
         }
 
         public IConfiguration Configuration { get; }
@@ -31,7 +45,7 @@ namespace FoodStorage_Backend
             // Services Registrations
             services.AddScoped<ITestService, TestService>(); // tests service
             services.AddScoped<IApartmentService, ApartmentService>(); // apartments service
-
+            
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
