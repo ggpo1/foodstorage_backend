@@ -21,7 +21,9 @@ namespace FoodStorage_Backend.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=TVK49\\SQLEXPRESS;Database=FoodStorage;Trusted_Connection=True");
+            // DESKTOP-4ELF06P
+            // TVK49
+            optionsBuilder.UseSqlServer("Server=DESKTOP-4ELF06P\\SQLEXPRESS;Database=FoodStorage;Trusted_Connection=True");
         }
     }
 }

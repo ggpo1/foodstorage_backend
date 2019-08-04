@@ -6,6 +6,7 @@ using FoodStorage_Backend.Models;
 using FoodStorage_Backend.Models.DataBase;
 using FoodStorage_Backend.Services.ApartmentSevice;
 using FoodStorage_Backend.Services.TestService;
+using FoodStorage_Backend.Services.UserService;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -45,7 +46,7 @@ namespace FoodStorage_Backend
             // Services Registrations
             services.AddScoped<ITestService, TestService>(); // tests service
             services.AddScoped<IApartmentService, ApartmentService>(); // apartments service
-            
+            services.AddScoped<IUserService, UserService>(); // users service
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

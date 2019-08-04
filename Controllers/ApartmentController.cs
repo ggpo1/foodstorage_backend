@@ -27,7 +27,7 @@ namespace FoodStorage_Backend.Controllers
         }
 
         [HttpGet]
-        [Route("getapartmentsbyid")]
+        [Route("getapartmentbyid")]
         public async Task<Apartment> GetApartmentByID(int apartmentID)
         {
             return await service.GetApartmentByID(apartmentID);
