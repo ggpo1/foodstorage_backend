@@ -9,6 +9,7 @@ using FoodStorage_Backend.Services.AuthService;
 using FoodStorage_Backend.Services.FSSTypeService;
 using FoodStorage_Backend.Services.FStorageService;
 using FoodStorage_Backend.Services.FStorageStillageService;
+using FoodStorage_Backend.Services.ProductService;
 using FoodStorage_Backend.Services.RoomService;
 using FoodStorage_Backend.Services.UserService;
 using Microsoft.AspNetCore.Builder;
@@ -77,6 +78,7 @@ namespace FoodStorage_Backend
             services.AddScoped<IFStorageStillageService, FStorageStillageService>(); // fstoragestillages sevice
             services.AddScoped<IAuthService, AuthService>(); // auth service
             services.AddScoped<IFSSTypeService, FSSTypeService>(); // stillage types service
+            services.AddScoped<IProductService, ProductService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
