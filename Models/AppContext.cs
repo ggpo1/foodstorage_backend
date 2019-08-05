@@ -1,5 +1,6 @@
 ﻿using FoodStorage_Backend.Models.DataBase;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +24,12 @@ namespace FoodStorage_Backend.Models
         {
             // DESKTOP-4ELF06P
             // TVK49
-            optionsBuilder.UseSqlServer("Server=DESKTOP-4ELF06P\\SQLEXPRESS;Database=FoodStorage;Trusted_Connection=True");
+            IConfigurationRoot configuration = new ConfigurationBuilder()
+            .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+            .AddJsonFile("appsettings.json")
+            .Build();
+
+            optionsBuilder.UseSqlServer(configuration.GetConnectionString("job_db"));
         }
     }
 }

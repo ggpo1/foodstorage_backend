@@ -36,5 +36,10 @@ namespace FoodStorage_Backend.Services.ApartmentSevice
             MyDb.db.SaveChanges();
             return Task.Run(() => apartment);
         }
+
+        public Task<User> GetUserByApartmentID(int apartmentID)
+        {
+            return Task.Run(() => MyDb.db.Apartments.FirstOrDefault(elem => elem.ApartmentID == apartmentID).User);
+        }
     }
 }

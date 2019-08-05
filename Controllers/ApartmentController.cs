@@ -1,4 +1,5 @@
-﻿using FoodStorage_Backend.Models.DataBase;
+﻿using FoodStorage_Backend.Models;
+using FoodStorage_Backend.Models.DataBase;
 using FoodStorage_Backend.Services.ApartmentSevice;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -39,6 +40,14 @@ namespace FoodStorage_Backend.Controllers
         {
             return await service.GetUserApartments(userID);
         }
+
+        [HttpGet]
+        [Route("getuserbyapartmentid")]
+        public async Task<User> GetUserByApartmentID(int apartmentID)
+        {
+            return await service.GetUserByApartmentID(apartmentID);
+        }
+
         #endregion
         #region Post data methods
         [HttpPost]

@@ -1,4 +1,5 @@
-﻿using FoodStorage_Backend.Models.DataBase;
+﻿using FoodStorage_Backend.Models;
+using FoodStorage_Backend.Models.DataBase;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace FoodStorage_Backend.Services.ApartmentSevice
         Task<List<Apartment>> GetApartments();
         Task<Apartment> GetApartmentByID(int apartmentID);
         Task<List<Apartment>> GetUserApartments(int userID);
+        Task<User> GetUserByApartmentID(int apartmentID);
 
         // Add method
         Task<Apartment> AddApartment(Apartment apartment);
