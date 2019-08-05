@@ -11,6 +11,8 @@
   <ItemGroup>
     <Compile Remove="Migrations\20190802132850_Models.cs" />
     <Compile Remove="Migrations\20190802132850_Models.Designer.cs" />
+    <Compile Remove="Migrations\20190805142245_UserIDS.cs" />
+    <Compile Remove="Migrations\20190805142245_UserIDS.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,10 +25,6 @@
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.7.9" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Models\DTO\" />
   </ItemGroup>
 
 </Project>

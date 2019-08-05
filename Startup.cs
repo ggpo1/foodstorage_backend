@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using FoodStorage_Backend.Models;
 using FoodStorage_Backend.Models.DataBase;
 using FoodStorage_Backend.Services.ApartmentSevice;
+using FoodStorage_Backend.Services.AuthService;
+using FoodStorage_Backend.Services.FSSTypeService;
 using FoodStorage_Backend.Services.FStorageService;
 using FoodStorage_Backend.Services.FStorageStillageService;
 using FoodStorage_Backend.Services.RoomService;
@@ -71,8 +73,10 @@ namespace FoodStorage_Backend
             services.AddScoped<IApartmentService, ApartmentService>(); // apartments service
             services.AddScoped<IUserService, UserService>(); // users service
             services.AddScoped<IRoomService, RoomService>(); // rooms service
-            services.AddScoped<IFStorageService, FStorageService>(); // fstorage service
-            services.AddScoped<IFStorageStillageService, FStorageStillageService>(); // fstoragestillage sevice
+            services.AddScoped<IFStorageService, FStorageService>(); // fstorages service
+            services.AddScoped<IFStorageStillageService, FStorageStillageService>(); // fstoragestillages sevice
+            services.AddScoped<IAuthService, AuthService>(); // auth service
+            services.AddScoped<IFSSTypeService, FSSTypeService>(); // stillage types service
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
