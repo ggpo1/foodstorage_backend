@@ -1,0 +1,666 @@
+{
+	"info": {
+		"_postman_id": "e1a660f3-1a06-46c8-95fd-5fa4119b27cf",
+		"name": "FoodStorage",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Apartment",
+			"item": [
+				{
+					"name": "GetApartments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44309/api/apartment",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44309",
+							"path": [
+								"api",
+								"apartment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetApartmentByID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44309/api/apartment/getapartmentsbyid?apartmentID=9",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44309",
+							"path": [
+								"api",
+								"apartment",
+								"getapartmentsbyid"
+							],
+							"query": [
+								{
+									"key": "apartmentID",
+									"value": "9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUserApartments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44309/api/apartment/getuserapartments?userID=9",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44309",
+							"path": [
+								"api",
+								"apartment",
+								"getuserapartments"
+							],
+							"query": [
+								{
+									"key": "userID",
+									"value": "9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUserByApartmentID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44309/api/apartment/getuserbyapartmentid?apartmentid=10",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44309",
+							"path": [
+								"api",
+								"apartment",
+								"getuserbyapartmentid"
+							],
+							"query": [
+								{
+									"key": "apartmentid",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddApartment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateApartment",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"ApartmentID\": 11,\n    \"ApartmentAddress\": \"г. Москва\"\n}"
+						},
+						"url": {
+							"raw": "https://localhost:44309/api/apartment",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44309",
+							"path": [
+								"api",
+								"apartment"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "GetUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUserByID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Room",
+			"item": [
+				{
+					"name": "GetRooms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44309/api/room",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44309",
+							"path": [
+								"api",
+								"room"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetRoomByID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetApatmentRooms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44309/api/room/getapartmentrooms?apartmentID=19",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44309",
+							"path": [
+								"api",
+								"room",
+								"getapartmentrooms"
+							],
+							"query": [
+								{
+									"key": "apartmentID",
+									"value": "19"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetApartmentByRoomID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44309/api/room/getapartmentbyroomid?roomid=24",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44309",
+							"path": [
+								"api",
+								"room",
+								"getapartmentbyroomid"
+							],
+							"query": [
+								{
+									"key": "roomid",
+									"value": "24"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUserByRoomID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44309/api/room/getuserbyroomid?roomid=24",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44309",
+							"path": [
+								"api",
+								"room",
+								"getuserbyroomid"
+							],
+							"query": [
+								{
+									"key": "roomid",
+									"value": "24"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddRoom",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44309/api/room",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44309",
+							"path": [
+								"api",
+								"room"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "FStorage",
+			"item": [
+				{
+					"name": "GetFStorages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44309/api/fstorage",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44309",
+							"path": [
+								"api",
+								"fstorage"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetFStorageByID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44309/api/fstorage/getfstoragebyid?fstorageid=3",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44309",
+							"path": [
+								"api",
+								"fstorage",
+								"getfstoragebyid"
+							],
+							"query": [
+								{
+									"key": "fstorageid",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetRoomFStorages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetRoomByFStorageID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44309/api/fstorage/getroombyfstorageid?fstorageid=3",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44309",
+							"path": [
+								"api",
+								"fstorage",
+								"getroombyfstorageid"
+							],
+							"query": [
+								{
+									"key": "fstorageid",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetApartmentByFStorageID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44309/api/fstorage/getapartmentbyfstorageid?fstorageid=3",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44309",
+							"path": [
+								"api",
+								"fstorage",
+								"getapartmentbyfstorageid"
+							],
+							"query": [
+								{
+									"key": "fstorageid",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUserByFStorageID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44309/api/fstorage/getuserbyfstorageid?fstorageid=3",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44309",
+							"path": [
+								"api",
+								"fstorage",
+								"getuserbyfstorageid"
+							],
+							"query": [
+								{
+									"key": "fstorageid",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddFStorage",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44309/api/fstorage",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44309",
+							"path": [
+								"api",
+								"fstorage"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "FStorageStillage",
+			"item": [
+				{
+					"name": "GetFStorageStillage",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44309/api/fstoragestillage",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44309",
+							"path": [
+								"api",
+								"fstoragestillage"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetFStorageStillageByID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44309/api/fstoragestillage/getfstoragestillagebyid?fstoragestillageid=4",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44309",
+							"path": [
+								"api",
+								"fstoragestillage",
+								"getfstoragestillagebyid"
+							],
+							"query": [
+								{
+									"key": "fstoragestillageid",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetFStorageStillages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetFStorageByStillageID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44309/api/fstoragestillage/getfstoragebystillageid?fstoragestillageid=4",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44309",
+							"path": [
+								"api",
+								"fstoragestillage",
+								"getfstoragebystillageid"
+							],
+							"query": [
+								{
+									"key": "fstoragestillageid",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetRoomByFStorageStillageID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44309/api/fstoragestillage/getroombyfstoragestillageid?fstoragestillageid=4",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44309",
+							"path": [
+								"api",
+								"fstoragestillage",
+								"getroombyfstoragestillageid"
+							],
+							"query": [
+								{
+									"key": "fstoragestillageid",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetApartmentByFStorageStillageID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUserByFStorageStillageID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddFStorageStillage",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44309/api/fstoragestillage/",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44309",
+							"path": [
+								"api",
+								"fstoragestillage",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateFStorageStillage",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44309/api/fstoragestillage/",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44309",
+							"path": [
+								"api",
+								"fstoragestillage",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
