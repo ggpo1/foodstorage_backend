@@ -28,38 +28,44 @@ namespace FoodStorage_Backend
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            try
+            {
+                MyDb.db.Users.RemoveRange(MyDb.db.Users.ToArray());
+                MyDb.db.Apartments.RemoveRange(MyDb.db.Apartments.ToArray());
+                MyDb.db.Rooms.RemoveRange(MyDb.db.Rooms.ToArray());
+                MyDb.db.FStorages.RemoveRange(MyDb.db.FStorages.ToArray());
+                MyDb.db.FStorageStillageTypes.RemoveRange(MyDb.db.FStorageStillageTypes.ToArray());
+                MyDb.db.FStorageStillages.RemoveRange(MyDb.db.FStorageStillages.ToArray());
+                MyDb.db.SaveChanges();
 
-            MyDb.db.Users.RemoveRange(MyDb.db.Users.ToArray());
-            MyDb.db.Apartments.RemoveRange(MyDb.db.Apartments.ToArray());
-            MyDb.db.Rooms.RemoveRange(MyDb.db.Rooms.ToArray());
-            MyDb.db.FStorages.RemoveRange(MyDb.db.FStorages.ToArray());
-            MyDb.db.FStorageStillageTypes.RemoveRange(MyDb.db.FStorageStillageTypes.ToArray());
-            MyDb.db.FStorageStillages.RemoveRange(MyDb.db.FStorageStillages.ToArray());
-            MyDb.db.SaveChanges();
+                User user1 = new User() { UserName = "user1", UserEmail = "user@email.com" };
+                MyDb.db.Users.Add(user1);
+                MyDb.db.SaveChanges();
 
-            User user1 = new User() { UserName = "user1", UserEmail = "user@email.com" };
-            MyDb.db.Users.Add(user1);
-            MyDb.db.SaveChanges();
+                Apartment apartment1 = new Apartment() { ApartmentName = "Дом", ApartmentAddress = "Москва", UserID = user1.UserID };
+                MyDb.db.Apartments.Add(apartment1);
+                MyDb.db.SaveChanges();
 
-            Apartment apartment1 = new Apartment() { ApartmentName = "Дом", ApartmentAddress = "Москва", UserID = user1.UserID };
-            MyDb.db.Apartments.Add(apartment1);
-            MyDb.db.SaveChanges();
+                Room room1 = new Room() { RoomName = "Гостинная", ApartmentID = apartment1.ApartmentID };
+                MyDb.db.Rooms.Add(room1);
+                MyDb.db.SaveChanges();
 
-            Room room1 = new Room() { RoomName = "Гостинная", ApartmentID = apartment1.ApartmentID };
-            MyDb.db.Rooms.Add(room1);
-            MyDb.db.SaveChanges();
+                FStorage fstorage1 = new FStorage() { FStorageName = "Главный", RoomID = room1.RoomID };
+                MyDb.db.FStorages.Add(fstorage1);
+                MyDb.db.SaveChanges();
 
-            FStorage fstorage1 = new FStorage() { FStorageName = "Главный", RoomID = room1.RoomID };
-            MyDb.db.FStorages.Add(fstorage1);
-            MyDb.db.SaveChanges();
+                FStorageStillageType fStorageStillageType1 = new FStorageStillageType() { FStorageStillageTypeName = "Мясной" };
+                MyDb.db.FStorageStillageTypes.Add(fStorageStillageType1);
+                MyDb.db.SaveChanges();
 
-            FStorageStillageType fStorageStillageType1 = new FStorageStillageType() { FStorageStillageTypeName = "Мясной" };
-            MyDb.db.FStorageStillageTypes.Add(fStorageStillageType1);
-            MyDb.db.SaveChanges();
-
-            FStorageStillage fStorageStillage1 = new FStorageStillage() { FStorageID = fstorage1.FStorageID, FStorageStillageTypeID = fStorageStillageType1.FStorageStillageTypeID };
-            MyDb.db.Add(fStorageStillage1);
-            MyDb.db.SaveChanges();
+                FStorageStillage fStorageStillage1 = new FStorageStillage() { FStorageID = fstorage1.FStorageID, FStorageStillageTypeID = fStorageStillageType1.FStorageStillageTypeID };
+                MyDb.db.Add(fStorageStillage1);
+                MyDb.db.SaveChanges();
+            }
+            catch
+            {
+                
+            }
 
             // FStorageStillage fStorageStillage1 = new FStorageStillage() {  }
         }
